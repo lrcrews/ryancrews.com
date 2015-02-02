@@ -1,0 +1,58 @@
+@import "mixins";
+
+body {
+	
+	&.rcblog {
+
+		> div.site-header {
+			background-color: rgba(255, 255, 255, 0.9);
+			border-bottom: 1px solid $background-blue;
+			height: $height-of-site-header;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: $z-highest;
+
+			> section {
+				height: 100%;
+				margin: 0 auto;
+				
+				@media (max-width: 64em) { width: 100%; }
+				@media (min-width: 64.001em) and (max-width: 78.124em) { width: 64em; }
+				@media (min-width: 78.125em) { width: 78.125em; }
+
+				> * {
+					display: inline-block;
+					vertical-align: top;
+				}
+
+				> header {
+					font-size: $big-ass-title;
+					padding: 0.660em 0 0 0.250em;
+					width: 50%;
+
+					@media (max-width: 64em) { font-size: $largest; }
+				}
+
+				> footer {
+					height: 100%;
+					width: 48%;
+
+					> ul {
+						float: right;
+						height: 100%;
+
+						> li {
+							display: inline-block;
+							padding: 1em 1em 0 0;
+
+							> i {
+								font-size: $big-ass-title;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+@import "mixins";
+
+body.rcblog {
+
+	// category classes (for category name text)
+	// (also see colors.css.scss)
+
+	.category-feature-request {
+		color: $category-feature-request;
+	}
+
+	.category-meta {
+		color: $category-meta;
+	}
+	
+	.category-not-a-rant {
+		color: $category-not-a-rant;
+	}
+
+	.category-site-stuff {
+		color: $category-site-stuff;
+	}
+	
+	.category-the-expiration-date {
+		color: $category-feature-request;
+	}
+	
+	.category-this-is-cool {
+		color: $category-feature-request;
+	}
+	
+	.category-tutorialish {
+		color: $category-feature-request;
+	}
+
+	// font size helpers
+
+	.big-ass-title {
+		font-size: $big-ass-title;
+	}
+
+	.large-text {
+		font-size: $large;
+	}
+
+	.larger-text {
+		font-size: $larger;
+	}
+
+	.largest-text {
+		font-size: $largest;
+	}
+
+	.small-text {
+		font-size: $small;
+	}
+
+	.smaller-text {
+		font-size: $smaller;
+	}
+
+	.smallest-text {
+		font-size: $smallest;
+	}
+
+}
