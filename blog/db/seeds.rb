@@ -10,7 +10,7 @@
 Category.create(name: "site stuff")
 
 Category.create(name: "feature request")
-Category.create(name: "not a rant")
+Category.create(name: "old school blogging")
 Category.create(name: "the expiration date")
 Category.create(name: "this is cool")
 Category.create(name: "tutorialish")
