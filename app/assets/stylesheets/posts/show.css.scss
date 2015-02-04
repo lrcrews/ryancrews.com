@@ -1,0 +1,119 @@
+@import "mixins";
+
+body.rcblog > section.page-container {
+	
+	> section.show-post {
+		margin: 0 auto;
+		width: 33em;
+
+		@media (max-width: 33em) { width: 100%; }
+
+		> * {
+			padding: 1em;
+			@media (max-width: 33em) { padding: 4%; }
+		}
+		
+		/* The Fixed (Top) Part */
+		> header {
+			background-color: $background-light;
+  		position: fixed;
+  		top: 0;
+  		width: 33em;
+			z-index: $z-negative;
+
+			@media (max-width: 33em) { width: 100%; }
+
+			> section {
+				margin-top: $height-of-site-header + 1em;
+				position: relative;
+
+				/* the big ass title */
+				> header {
+					font-size: $big-ass-title;
+					@media (max-width: 33em) { font-size: $largest; }
+				}
+
+				/* category link and created at timestamp */
+				> footer {
+					font-size: $small;
+
+					> span {
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		/* The Slidey (Lower) Part */
+		> footer {
+			background-color: $background-light;
+			margin-top: $height-of-site-header + 7.777em; // an over-estimate, corrected once values known in post.js.coffee
+			position: relative;
+			z-index: $z-low;
+
+			-webkit-transition: margin-top 0.5s ease-out;
+			transition: margin-top 0.5s ease-out;
+
+			> section {
+
+				/* main content */
+				> header > section {
+					
+					> section {
+
+						&:last-child {
+							padding-bottom: 2em;
+						}
+
+						&:not(:first-child) {
+							padding-top: 1em;
+						}
+
+						/* sub-header (not always present) */
+						> header {
+							color: $font-blue;
+							font-size: $large;
+							padding-bottom: 0.420em;
+						}
+
+						/* a block of text */
+						> section {
+
+						}
+
+						/* indented lines of text or bullet points */
+						> ul {
+							padding: 2em;
+
+							> li {
+
+								&.bullet {
+									font-family: FontAwesome;
+
+									&:before {
+              			content: '\f0a3';
+              			font-size: $smallest;
+              			padding-right: 0.420em;
+              		}
+								}
+							}
+						}
+
+						/* a little seperator (not always present) */
+						> footer {
+							border-bottom: 0.033em solid $background-dark;
+							height: 1em;
+							margin: 0 auto;
+							width: 42%;
+						}
+					}
+				}
+
+				/* link to random post and to shirts */
+				> footer {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

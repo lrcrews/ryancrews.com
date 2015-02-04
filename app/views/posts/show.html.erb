@@ -1,0 +1,45 @@
+<section class="show-post" ng-controller="PostController" ng-init="initialize()">
+	
+	<%# 
+	This page has an interesting effect,
+	this header is the fixed (top) part
+	of this effect.
+	%>
+	<header>
+		<section>
+			
+			<%# title %>
+			<header>
+				{{ post.title }}
+			</header>
+			
+			<%# category name | date published %>
+			<footer>
+				<%= render partial: "posts/partials/category_name_and_publish_date" %>
+			</footer>
+
+		</section>
+	</header>
+	
+	<%#  
+	This is the remaining content (bottom)
+	%>
+	<footer>
+		<section>
+
+			<%# the post itself %>
+			<header>
+				<section ng-bind-html="post.html_content">
+					<%# the binding is putting the content in %>
+				</section>
+			</header>
+
+			<%# link to another post | link to shirts %>
+			<footer>
+				<span class="link" ng-click="showRandomPost()">random post</span> <!--| <span class="link" ng-click="navigateToShirts()">buy me a beer (you'll get a shirt!)</span-->
+			</footer>
+
+		</section>
+	</footer>
+
+</section>

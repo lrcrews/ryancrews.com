@@ -1,0 +1,23 @@
+$background-blue: #CAE1FF;
+$background-dark: #073473;
+$background-inbetween: #F2F2F2;
+$background-light: #FEFEFE;
+
+// when adding a new category add a variable here,
+// and a corresponding class to text.css.scss.
+// the pattern is category-foo-bar, where "Foo Bar"
+// is your category name that has been downcased
+// and had it's spaces gsub'ed for dashes.
+$category-feature-request: #39B5AB; 		// teal(ish)						[All New X-Factor #2]
+$category-meta: #FDDF09; 								// deep yellow 					[All New X-Factor #1]
+$category-old-school-blogging: #CB8FB9;	// (a calming?) purple	[All New X-Factor #3]
+$category-site-stuff: #7D0F19;					// a redish-brown				[-Serval Industries-]
+$category-the-expiration-date: #F7A116;	// gold(enrod)					[All New X-factor #5]
+$category-this-is-cool: #EB5B56;				// pink (well kind of)	[All New X-Factor #9]
+$category-tutorialish: #94C42C;					// (eruditish) green		[All New X-Factor #8]
+
+$font-blue: #0099FF;
+$font-cobalt: #073473;
+$font-dark: #323232;
+$font-inbetween: #696969;
+$font-light: #fefefe;
