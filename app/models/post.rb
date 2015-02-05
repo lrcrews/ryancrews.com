@@ -85,62 +85,62 @@ class Post < ActiveRecord::Base
 		# 		 to teach and allow for a playground for others
 		# 		 without actually impacting the function of this site.
 
-		post.html_content = "" +
-				"<section>" + 
-					"<header>" +
-						"This is a style guide and a playground.  Also, this is what a sub-header looks like" +
-					"</header>" +
-					"<section>" +
-						"This is a paragraph of content.  The value of this particular content is questionable.  " +
-						"In it you'll simply learn that I like Firefly (and really, you should too).  If you're " +
-						"somehow unaware, Firefly was an amazing show that starred Nathan Fillion (also on Castle), " +
-						"Gina Torres (I think her and Nathan both did voices on the Destiny video game), Alan Tudyk " +
-						"(A Knight's Tale is a favorite of mine, also Dodgeball is funny [I'm wearing a Purple Cobras " +
-						"shirt right now], and Tucker and Dale vs. Evil), and Morena Baccarin (who just showed up on " +
-						"Gotham! [also V and Homeland]).  There's others too, but this is plenty of text, so let's " +
-						"look at some indented text, a quote from Captain Mal:" +
-					"</section>" +
-					"<ul>" + 
-						"<li>" +
-							"`Next time you want to stab me in the back, have the guts to do it to my face.`" +
-						"</li>" + 
-					"</ul>" + 
-					"<section>" + 
-						"Shiny.  This is another nested section, like the paragraph above, but now let's look " +
-						"at what it looks like to have another section container (and while we're at it let's " +
-						"look at what happens when a footer tag is supplied)." +
-					"</section>" + 
-					"<footer></footer>" +
-				"</section>" + 
-				"<section>" +
-					"<header>" + 
-						"Here we are at sub-header number two" +
-					"</header>" + 
-					"<section>" +
-						"We're not required to have a sub-header.  You could go comment out the lines right " +
-						"above this in the post.rb file to see what that might look like.  For now though, let's " +
-						"see what bullet points look like (and why not use some titles of Firefly episodes?):" +
-					"</section>" + 
-					"<ul>" + 
-						"<li class='bullet'>" +
-							"Serenity" +
-						"</li>" + 
-						"<li class='bullet'>" +
-							"The Train Job" +
-						"</li>" + 
-						"<li class='bullet'>" +
-							"Bushwhacked" +
-						"</li>" + 
-						"<li class='bullet'>" +
-							"Shindig" +
-						"</li>" + 
-					"</ul>" + 
-					"<section>" +
-						"Foo Bar was the fooiest bar of all.  One day, when no other bar where foo'ing Foo " +
-						"stood as still as a doubt, and listened, listened to the silence.  Why did the others " +
-						"stop foo'ing?  Foo Bar ran to see the others, but alas, the silence now made sense, " +
+		post.html_content = "" <<
+				"<section>" << 
+					"<header>" <<
+						"This is a style guide and a playground.  Also, this is what a sub-header looks like" <<
+					"</header>" <<
+					"<section>" <<
+						"This is a paragraph of content.  The value of this particular content is questionable.  " <<
+						"In it you'll simply learn that I like Firefly (and really, you should too).  If you're " <<
+						"somehow unaware, Firefly was an amazing show that starred Nathan Fillion (also on Castle), " <<
+						"Gina Torres (I think her and Nathan both did voices on the Destiny video game), Alan Tudyk " <<
+						"(A Knight's Tale is a favorite of mine, also Dodgeball is funny [I'm wearing a Purple Cobras " <<
+						"shirt right now], and Tucker and Dale vs. Evil), and Morena Baccarin (who just showed up on " <<
+						"Gotham! [also V and Homeland]).  There's others too, but this is plenty of text, so let's " <<
+						"look at some indented text, a quote from Captain Mal:" <<
+					"</section>" <<
+					"<ul>" << 
+						"<li>" <<
+							"`Next time you want to stab me in the back, have the guts to do it to my face.`" <<
+						"</li>" << 
+					"</ul>" << 
+					"<section>" << 
+						"Shiny.  This is another nested section, like the paragraph above, but now let's look " <<
+						"at what it looks like to have another section container (and while we're at it let's " <<
+						"look at what happens when a footer tag is supplied)." <<
+					"</section>" << 
+					"<footer></footer>" <<
+				"</section>" << 
+				"<section>" <<
+					"<header>" << 
+						"Here we are at sub-header number two" <<
+					"</header>" << 
+					"<section>" <<
+						"We're not required to have a sub-header.  You could go comment out the lines right " <<
+						"above this in the post.rb file to see what that might look like.  For now though, let's " <<
+						"see what bullet points look like (and why not use some titles of Firefly episodes?):" <<
+					"</section>" << 
+					"<ul>" << 
+						"<li class='bullet'>" <<
+							"Serenity" <<
+						"</li>" << 
+						"<li class='bullet'>" <<
+							"The Train Job" <<
+						"</li>" << 
+						"<li class='bullet'>" <<
+							"Bushwhacked" <<
+						"</li>" << 
+						"<li class='bullet'>" <<
+							"Shindig" <<
+						"</li>" << 
+					"</ul>" << 
+					"<section>" <<
+						"Foo Bar was the fooiest bar of all.  One day, when no other bar where foo'ing Foo " <<
+						"stood as still as a doubt, and listened, listened to the silence.  Why did the others " <<
+						"stop foo'ing?  Foo Bar ran to see the others, but alas, the silence now made sense, " <<
 						"for they were all now f.u.b.a.r. too."
-					"</section>" + 
+					"</section>" << 
 				"</section>"
 
 
