@@ -15,6 +15,7 @@ class Category < ActiveRecord::Base
 			created_at: self.created_at,
 			id: self.id,
 			name: self.name.present? ? self.name.downcase : "",
+			number_of_posts: self.posts.count,
 			updated_at: self.updated_at
 		}
 

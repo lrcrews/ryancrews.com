@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
 	# View of all the categories
 	def index
-		
+		gon.categories = Category.all.as_json
 	end
 
 

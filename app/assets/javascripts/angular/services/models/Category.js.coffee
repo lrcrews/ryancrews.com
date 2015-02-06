@@ -9,6 +9,7 @@ rcblogAppServicesModule.factory("Category", ->
 			@created_at = json.created_at ? ""
 			@id = json.id ? null
 			@name = json.name ? ""
+			@number_of_posts = json.number_of_posts ? null
 			@updated_at = json.updated_at ? ""
 
 			@intro_post = json.intro_post ? {} #Post.js.coffee
@@ -16,7 +17,14 @@ rcblogAppServicesModule.factory("Category", ->
 
 
 		className: ->
-			"category-#{@name.replace(' ', '-')}"
+			"category-#{ @name.replace(/\ /g, "-") }"
+
+
+		numberOfPostsAsString: ->
+			if @number_of_posts > 0
+				"#{@number_of_posts} posts"
+			else
+				"no posts (yet)"
 
 
 		showLink: ->

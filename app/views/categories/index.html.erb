@@ -1,0 +1,34 @@
+<section class="all-categories" ng-controller="CategoriesController" ng-init="initialize()">
+
+	<%# 
+	This page has an interesting effect,
+	this header is the fixed (top) part
+	of this effect.
+
+	MVP: at the moment I have nothing here,
+			 but it's set up in the css/js so
+			 it's easy to add something later.
+	%>
+	<header>
+	</header>
+	
+	<%#  
+	This is the remaining content (bottom)
+	%>
+	<footer>
+		<section>
+
+			<header>
+				{{ categories.length }} categories
+			</header>
+		
+			<ul>
+				<li ng-repeat="category in categories">
+					<%= render partial: "categories/partials/full_width_brief" %>
+				</li>
+			</ul>
+
+		</section>
+	</footer>
+
+</section>

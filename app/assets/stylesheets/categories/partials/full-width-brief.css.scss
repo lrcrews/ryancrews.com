@@ -1,0 +1,17 @@
+@import "mixins";
+
+body.rcblog > section.page-container {
+	
+	section.category-preview-full-width-brief {
+		cursor: pointer;
+
+		> header {
+			color: $font-cobalt;
+			font-size: $largest;
+
+			&:hover {
+				color: $font-blue;
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<%#
+This partial assumes it is included by a parent that has
+a scope variable named 'category' that is a
+Category.js.coffee instance.
+%>
+<section class="category-preview-full-width-brief" 
+				 ng-click="showCategory($event, category)">
+
+	<%# name %>
+	<header>
+		{{ category.name }}
+	</header>
+
+	<span ng-class="classForCategory(category)" 
+					rc-hover-element
+					rc-hover-message="view category">
+		{{ category.numberOfPostsAsString() }}
+	</span>
+
+</section>
