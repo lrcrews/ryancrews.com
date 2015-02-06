@@ -47,7 +47,7 @@ class PostsController < ApplicationController
 	private
 
 		def set_random_post_link
-			gon.random_post_link = post_url( id: rand(1..Post.count) )
+			gon.random_post_link = params[:id].present? ? post_url( id: rand(1..Post.count) ) : meta_posts_url
 		end
 
 
