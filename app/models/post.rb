@@ -3,9 +3,12 @@ class Post < ActiveRecord::Base
 
 	belongs_to :category
 
+	has_many :links
+
 
 	scope :about_post, -> { where(title: "why this site?  why thesse words?  why does a software engineer have a blog?").limit(1).first }
 	scope :most_recent, -> (count) { order('created_at desc').limit(count) unless count.nil? }
+
 
 	def as_json(options={})
 		hash = {
