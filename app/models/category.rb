@@ -3,7 +3,6 @@ class Category < ActiveRecord::Base
 
 	belongs_to :intro_post, class_name: "Post", foreign_key: :intro_post_id
 
-
 	has_many :posts
 
 
@@ -27,7 +26,7 @@ class Category < ActiveRecord::Base
 		end
 
 		if include_all || options[:include_posts] == "yes"
-			posts = self.posts.as_json(exclude_category: "yes")
+			posts = self.posts.order("id DESC").as_json(exclude_category: "yes")
 			hash.merge!( posts: posts.each{ |post_json| post_json.merge!(category: self.as_json) } )
 		end
 
