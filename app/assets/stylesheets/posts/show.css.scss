@@ -83,7 +83,7 @@ body.rcblog > section.page-container {
 
 						/* indented lines of text or bullet points */
 						> ul {
-							padding: 2em;
+							padding: 1em;
 
 							> li {
 
@@ -99,12 +99,16 @@ body.rcblog > section.page-container {
 							}
 						}
 
+						> img {
+							margin: 1.555em auto;
+						}
+
 						/* a little seperator (not always present) */
 						> footer {
 							border-bottom: 0.033em solid $background-dark;
 							height: 1em;
 							margin: 0 auto;
-							width: 42%;
+							width: 84%;
 						}
 					}
 				}
