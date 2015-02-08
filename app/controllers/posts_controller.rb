@@ -6,9 +6,21 @@ class PostsController < ApplicationController
 
 	# About whom?  Perhaps him?  Maybe her?
 	def about
-		about_post = Post.about_post
+		about_post = Post.of_type(Post::POST_TYPE_ABOUT)
 		if about_post.present?
 			gon.post = about_post.as_json
+			render :show
+		else
+			redirect_to :root
+		end
+	end
+
+
+	# The FTC and me, and you, and the things I write
+	def disclosure
+		disclosure_post = Post.of_type(Post::POST_TYPE_DISCLOSURE)
+		if disclosure_post.present?
+			gon.post = disclosure_post.as_json
 			render :show
 		else
 			redirect_to :root

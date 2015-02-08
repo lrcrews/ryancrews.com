@@ -23,6 +23,10 @@ rcblogAppControllersModule.controller("SiteController",
 			$scope.navigateToLink("/about")
 
 
+		$scope.navigateToDisclosure = ->
+			$scope.navigateToLink("/disclosure")
+
+
 		$scope.navigateToGithub = ->
 			$scope.navigateToLink("https://github.com/lrcrews/ryancrews.com", true)
 

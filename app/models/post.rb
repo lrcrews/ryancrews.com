@@ -1,13 +1,20 @@
 class Post < ActiveRecord::Base
 
 
+	# Constants to denote the type of "special" Posts
+	POST_TYPE_ABOUT = "about"
+	POST_TYPE_DISCLOSURE = "disclosure"
+
+
 	belongs_to :category
 
 	has_many :links
 
 
-	scope :about_post, -> { where(title: "why this site?  why thesse words?  why does a software engineer have a blog?").limit(1).first }
+	default_scope { order('created_at desc') }
+
 	scope :most_recent, -> (count) { order('created_at desc').limit(count) unless count.nil? }
+	scope :of_type, -> (type) { where(post_type: type).first unless type.nil? }
 
 
 	def as_json(options={})
