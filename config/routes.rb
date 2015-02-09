@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  
   root 'posts#home'
 
   get 'about' => 'posts#about'
@@ -19,8 +20,7 @@ Rails.application.routes.draw do
       get 'meta'
     end
   end
-  #TODO: create column on posts for normalized post title name (for links) and replace the id in show path with title name
-
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -15,6 +15,7 @@ class Category < ActiveRecord::Base
 			id: self.id,
 			name: self.name.present? ? self.name.downcase : "",
 			number_of_posts: self.posts.count,
+			slug: self.slug,
 			updated_at: self.updated_at
 		}
 
@@ -32,6 +33,20 @@ class Category < ActiveRecord::Base
 
 		hash
 	end
+
+
+	# A more SEO optimized URL slug, also check out
+	# to_param method
+	def slug
+    self.name.downcase.gsub(" ", "-") unless self.name.nil?
+  end
+
+
+  # When Rails calls to_param let's make sure it's
+  # a SEO optimized string
+  def to_param
+    "#{id}-#{self.slug}"
+  end
 
 
 	# This is the content for the /categories/meta route,

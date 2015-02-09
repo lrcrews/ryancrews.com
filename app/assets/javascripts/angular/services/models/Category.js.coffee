@@ -10,6 +10,7 @@ rcblogAppServicesModule.factory("Category", ->
 			@id = json.id ? null
 			@name = json.name ? ""
 			@number_of_posts = json.number_of_posts ? null
+			@slug = json.slug ? ""
 			@updated_at = json.updated_at ? ""
 
 			@intro_post = json.intro_post ? {} #Post.js.coffee
@@ -29,7 +30,7 @@ rcblogAppServicesModule.factory("Category", ->
 
 		showLink: ->
 			if @id?
-				"/categories/#{@id}"
+				if @slug? then "/categories/#{@id}-#{@slug}" else "/categories/#{@id}"
 			else
 				"/categories/meta"
 

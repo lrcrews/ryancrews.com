@@ -11,6 +11,7 @@ rcblogAppServicesModule.factory("Post",
 				@created_at = json.created_at ? ""
 				@html_content = if json.html_content? then $sce.trustAsHtml(json.html_content) else ""
 				@id = json.id ? null
+				@slug = json.slug ? ""
 				@teaser_text = json.teaser_text ? ""
 				@title = json.title ? ""
 				@updated_at = json.updated_at ? ""
@@ -24,7 +25,7 @@ rcblogAppServicesModule.factory("Post",
 
 			showLink: ->
 				if @id?
-					"/posts/#{@id}"
+					if @slug? then "/posts/#{@id}-#{@slug}" else "/posts/#{@id}"
 				else
 					"/posts/meta"
 

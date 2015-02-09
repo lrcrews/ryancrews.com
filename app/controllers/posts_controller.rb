@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 
-	before_action :set_random_post_link, only: [ :meta, :show ]
+	before_action :set_random_post_link, only: [ :about, :disclosure, :meta, :show ]
 
 
 	# About whom?  Perhaps him?  Maybe her?
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
 	private
 
 		def set_random_post_link
-			gon.random_post_link = params[:id].present? ? post_path( id: rand(1..Post.count) ) : meta_posts_path
+			gon.random_post_link = post_path( Post.offset( rand(Post.count) ).first )
 		end
 
 

@@ -22,6 +22,7 @@ class Post < ActiveRecord::Base
 			created_at: self.created_at,
 			html_content: self.html_content,
 			id: self.id,
+			slug: self.slug,
 			teaser_text: self.teaser_text,
 			title: self.title.present? ? self.title.titleize : "",
 			updated_at: self.updated_at
@@ -35,6 +36,13 @@ class Post < ActiveRecord::Base
 
 		hash
 	end
+
+
+	# A more SEO optimized URL slug, also check out
+	# to_param method
+	def slug
+    self.title.downcase.gsub(" ", "-") unless self.title.nil?
+  end
 
 
 	# per our style guide we know that html_content
@@ -60,6 +68,19 @@ class Post < ActiveRecord::Base
 		teaser = teaser[0..240] if teaser.length > 240
 		"#{teaser}..."
 	end
+
+
+	# Rails normally calls .to_s on the model's id, we're
+	# going to add the title of the post to that for SEO
+	# reasons.  By keeping id first in the string we don't
+	# lose any functionality as calling .to_i (as Rails does)
+	# on a string that begins with numbers and then has
+	# characters will return the number in front, which is
+	# the id we need for the controller to find the correct
+	# post.
+  def to_param
+    "#{id}-#{self.slug}"
+  end
 
 
 	# POC time:
