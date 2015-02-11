@@ -12,7 +12,7 @@ rcblogAppServicesModule.factory("Post",
 				@html_content = if json.html_content? then $sce.trustAsHtml(json.html_content) else ""
 				@id = json.id ? null
 				@slug = json.slug ? ""
-				@teaser_text = json.teaser_text ? ""
+				@teaser_text = if json.teaser_text? then $sce.trustAsHtml(json.teaser_text) else ""
 				@title = json.title ? ""
 				@updated_at = json.updated_at ? ""
 

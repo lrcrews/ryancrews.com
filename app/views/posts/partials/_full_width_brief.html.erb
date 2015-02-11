@@ -17,6 +17,7 @@ instance.
 	</footer>
 	
 	<%# teaser text %>
-	{{ post.teaser_text }}
+	<section ng-bind-html="post.teaser_text">
+	</section>
 
 </section>
