@@ -1,0 +1,22 @@
+@import "mixins";
+
+
+/* LINK STUFF */
+
+.link {
+	color: $font-cobalt;
+	cursor: pointer;
+
+	&:hover {
+		color: $font-blue;
+	}
+}
+
+
+/* NOTATION STUFF */
+
+/* if you can't use <sup></sup> for some reason */
+.to-the-nth {
+	font-size: .83em;
+	vertical-align: super
+}

@@ -27,11 +27,3 @@ body.rcblog {
 		@media (min-width: 78.125em) { width: 78.125em; }
 	}
 }
-.link {
-	color: $font-cobalt;
-	cursor: pointer;
-
-	&:hover {
-		color: $font-blue;
-	}
-}
