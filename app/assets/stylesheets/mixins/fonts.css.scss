@@ -11,3 +11,7 @@ $smallest: 0.690em;
 @mixin font-open-sans {
   font-family: 'Open Sans', sans-serif;
 }
+
+@mixin font-inconsolata {
+  font-family: 'Inconsolata';
+}
