@@ -8,16 +8,6 @@
 	<header ng-if="introPostPresent()">
 		<section>
 			
-			<%# name %>
-			<header>
-				{{ category.name }}
-			</header>
-			
-			<%# date introduced %>
-			<footer>
-				{{ category.created_at | date: 'MMMM d, y' }}
-			</footer>
-
 			<%# intro post cell %>
 			<%= render partial: "posts/partials/full_width_brief" %>
 

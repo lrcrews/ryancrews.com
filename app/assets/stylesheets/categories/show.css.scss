@@ -26,11 +26,6 @@ body.rcblog > section.page-container {
 				margin-top: $height-of-site-header + 1em;
 				position: relative;
 
-				/* the big ass title */
-				> header {
-					font-size: $big-ass-title;
-				}
-
 				/* created at timestamp */
 				> footer {
 					font-size: $smallest;
