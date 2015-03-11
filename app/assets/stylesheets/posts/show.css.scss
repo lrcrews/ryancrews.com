@@ -78,7 +78,7 @@ body.rcblog > section.page-container {
 
 						/* a block of text */
 						> section {
-
+							//text-align: justify;  // eh, I like it better with the rag
 						}
 
 						/* indented lines of text or bullet points */
@@ -86,6 +86,7 @@ body.rcblog > section.page-container {
 							padding: 4px 1.5em;
 
 							> li {
+								word-wrap: break-word;
 
 								&.bullet {
 									font-family: FontAwesome;
