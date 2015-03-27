@@ -10,6 +10,8 @@ class Post < ActiveRecord::Base
 
 	has_many :links
 
+	has_one :shirt
+
 
 	default_scope { order('created_at desc') }
 
