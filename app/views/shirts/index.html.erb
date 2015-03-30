@@ -1,0 +1,7 @@
+<div ng-controller="ShirtsController" ng-init="initialize()">
+    <ul ng-repeat="shirt in shirts">
+        <li>
+            Kapil<a ng-href="{{ shirt.link }}">{{ shirt.name }}</a>
+        </li>
+    </ul>
+</div>
