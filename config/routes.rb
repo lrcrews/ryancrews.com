@@ -20,6 +20,15 @@ Rails.application.routes.draw do
       get 'meta'
     end
   end
+
+  resources :shirts do
+    collection do
+      get 'meta'
+    end
+  end
+
+
+  
   
 
   # Example of regular route:
