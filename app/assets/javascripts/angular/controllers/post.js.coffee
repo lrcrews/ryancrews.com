@@ -33,7 +33,7 @@ rcblogAppControllersModule.controller("PostController",
 			# get height of section.show-post>header and set that
 			# as the margin-top of the main content, do so after a
 			# timeout as angularjs needs a digest cycle to populate
-			# the title text for a meaningful height to be gleened.
+			# the name text for a meaningful height to be gleened.
 			$timeout((->
 					$("section.show-post > footer").css( 'margin-top', $("section.show-post > header").outerHeight() )
 				), 100

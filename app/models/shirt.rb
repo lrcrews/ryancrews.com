@@ -13,7 +13,7 @@ class Shirt < ActiveRecord::Base
 			id: self.id,
 			image_link: self.slug,
 			link: self.teaser_text,
-			name: self.title.present? ? self.title.titleize : "",
+			name: self.name.present? ? self.name.titleize : "",
 			updated_at: self.updated_at
 		}
 

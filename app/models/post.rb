@@ -24,9 +24,9 @@ class Post < ActiveRecord::Base
 			created_at: self.created_at,
 			html_content: self.html_content,
 			id: self.id,
+			name: self.name.present? ? self.name.titleize : "",
 			slug: self.slug,
 			teaser_text: self.teaser_text,
-			title: self.title.present? ? self.title.titleize : "",
 			updated_at: self.updated_at
 		}
 
@@ -43,7 +43,7 @@ class Post < ActiveRecord::Base
 	# A more SEO optimized URL slug, also check out
 	# to_param method
 	def slug
-    self.title.downcase.gsub(" ", "-") unless self.title.nil?
+    self.name.downcase.gsub(" ", "-") unless self.name.nil?
   end
 
 
@@ -73,7 +73,7 @@ class Post < ActiveRecord::Base
 
 
 	# Rails normally calls .to_s on the model's id, we're
-	# going to add the title of the post to that for SEO
+	# going to add the name of the post to that for SEO
 	# reasons.  By keeping id first in the string we don't
 	# lose any functionality as calling .to_i (as Rails does)
 	# on a string that begins with numbers and then has
@@ -100,7 +100,7 @@ class Post < ActiveRecord::Base
 	# actual post.
 	def self.meta_post
 		post = Post.new
-		post.title = "This is a title that will be titlelized, a nice little method rails gives us"
+		post.name = "This is a name that will be titlelized, a nice little method rails gives us"
 		post.created_at = "24/02/1993".to_date # original release year of HTML
 
 		# NEVER generate HTML in your model.  This fundamentally

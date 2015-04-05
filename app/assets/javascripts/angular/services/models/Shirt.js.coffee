@@ -18,8 +18,8 @@ rcblogAppServicesModule.factory("Shirt",
 				@post = if json.post? then new Post(json.post) else new Post()
 
 				
-			postTitle: ->
-					"#{@post?.title}"
+			postName: ->
+					"#{@post?.name}"
 
 
 				showLink: ->

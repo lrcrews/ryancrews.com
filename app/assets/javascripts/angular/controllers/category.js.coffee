@@ -35,7 +35,7 @@ rcblogAppControllersModule.controller("CategoryController",
 			# get height of section.show-category>header and set that
 			# as the margin-top of the main content, do so after a
 			# timeout as angularjs needs a digest cycle to populate
-			# the title text for a meaningful height to be gleened.
+			# the name text for a meaningful height to be gleened.
 			$timeout((->
 					new_margin_top = $("section.show-category > header").outerHeight()
 					new_margin_top = "5em" if new_margin_top == null
