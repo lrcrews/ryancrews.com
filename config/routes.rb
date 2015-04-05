@@ -21,11 +21,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shirts do
-    collection do
-      get 'meta'
-    end
-  end
+  resources :shirts
 
 
   

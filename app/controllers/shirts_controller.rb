@@ -9,17 +9,9 @@ class ShirtsController < ApplicationController
 
 	# A shirt
 	def show
-		gon.shirt = Shirt.find_by_id(params[:id])
-		gon.shirt.as_json
-		if shirt.present? 
-			respond_to do |format|
-				format.html
-			end	
-		else
-			respond_to do |format|
-				format.html { redirect_to :index }
-			end
-		end
+		shirt = Shirt.find_by_id(params[:id])
+		redirect_to :index if shirt.nil?
+		gon.shirt = shirt.as_json
 	end
 
 end

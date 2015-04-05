@@ -2,31 +2,35 @@
 
 rcblogAppServicesModule = angular.module("rcblogApp.services")
 
-rcblogAppServicesModule.factory("Shirt", ->
-	class Shirt
-		
-		constructor: (json={}) ->
-			@created_at = json.created_at ? ""
-			@id = json.id ? null
-			@image_link = json.image_link ? ""
-			@link = json.link ? ""
-			@name = json.name ? ""
-			@updated_at = json.updated_at ? ""
+rcblogAppServicesModule.factory("Shirt", 
+	[ "Post", (Post) ->
 
+		class Post
 			
-		className: ->
-			"shirt-#{ @name.replace(/\ /g, "-") }"
+			constructor: (json={}) ->
+				@created_at = json.created_at ? ""
+				@id = json.id ? null
+				@image_link = json.image_link ? ""
+				@link = json.link ? ""
+				@name = json.name ? ""
+				@updated_at = json.updated_at ? ""
+
+				@post = if json.post? then new Post(json.post) else new Post()
+
+				
+			postTitle: ->
+					"#{@post?.title}"
 
 
-		showLink: ->
-			if @id?
-				"/shirts/#{@id}"
-			else
-				"/shirts/meta"
+				showLink: ->
+				if @id?
+					"/shirts/#{@id}"
+				else
+					"/shirts"
 
 
-		@shirt_from_json_shirts: (json_shirts_array) ->
-			# Create class versions of json shirts in the array
-			new Shirt(shirt) for shirt in json_shirts_array
+			@shirts_from_json_shirts: (json_shirts_array) ->
+				# Create class versions of json shirts in the array
+				new Shirt(shirt) for shirt in json_shirts_array
 
-)
+])

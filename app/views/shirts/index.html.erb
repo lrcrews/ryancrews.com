@@ -1,7 +1,34 @@
-<div ng-controller="ShirtsController" ng-init="initialize()">
-    <ul ng-repeat="shirt in shirts">
-        <li>
-            Kapil<a ng-href="{{ shirt.link }}">{{ shirt.name }}</a>
-        </li>
-    </ul>
-</div>
+<section class="shirts" ng-controller="ShirtsController" ng-init="initialize()">
+
+	<%# 
+	This page has an interesting effect,
+	this header is the fixed (top) part
+	of this effect.
+
+	MVP: at the moment I have nothing here,
+			 but it's set up in the css/js so
+			 it's easy to add something later.
+	%>
+	<header>
+	</header>
+	
+	<%#  
+	This is the remaining content (bottom)
+	%>
+	<footer>
+		<section>
+
+			<header>
+				{{ shirts.length }} shirts
+			</header>
+		
+			<ul>
+				<li ng-repeat="shirt in shirts">
+					{{ shirt.name }}
+				</li>
+			</ul>
+
+		</section>
+	</footer>
+
+</section>
