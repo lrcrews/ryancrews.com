@@ -7,19 +7,6 @@ class CategoriesController < ApplicationController
 	end
 
 
-	# The category about Category
-	def meta
-		# meta category doesn't have an actual DB intro post
-		# or list of posts, hence this stuff
-		meta_post = Post.meta_post.as_json.merge!(category: Category.meta_category.as_json)
-		meta_category = Category.meta_category.as_json
-		meta_category.merge!(intro_post: meta_post)
-		meta_category.merge!(posts: ([] << meta_post)*6)
-		gon.category = meta_category
-		render :show
-	end
-
-
 	# A category
 	def show
 		category = Category.find_by_id(params[:id])

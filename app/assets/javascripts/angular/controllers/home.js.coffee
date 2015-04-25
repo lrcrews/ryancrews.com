@@ -3,26 +3,17 @@
 rcblogAppControllersModule = angular.module("rcblogApp.controllers")
 
 rcblogAppControllersModule.controller("HomeController",
-	[ "$scope", "$http", "$timeout", "$window", "Post", ($scope, $http, $timeout, $window, Post) ->
+	[ "$scope", "$timeout", "Post", ($scope, $timeout, Post) ->
 
 
-		_self = this
-
-		$scope.posts = [] # see initialize
+		$scope.posts = Post.posts_from_json_posts(gon.posts)
 
 
 		$scope.navigateToAllPosts = ->
 			$scope.navigateToLink("/posts")
 
 
-		# ng-init method
 		$scope.initialize = ->
-			console.log("hello home")
-
-			# get the JS class versions of the JSON posts
-			$scope.posts = Post.posts_from_json_posts(gon.posts)
-
-			# scroll the updates footer to a visible position
 			scroll_top_value = $('section.home>footer').offset().top + 100 - window.innerHeight;
 			if scroll_top_value > 0
 				$timeout((->

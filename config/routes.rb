@@ -9,18 +9,8 @@ Rails.application.routes.draw do
   get 'about' => 'posts#about'
   get 'disclosure' => 'posts#disclosure'
 
-  resources :categories do
-    collection do
-      get 'meta'
-    end
-  end
-  
-  resources :posts do
-    collection do
-      get 'meta'
-    end
-  end
-
+  resources :categories
+  resources :posts
   resources :shirts
 
 

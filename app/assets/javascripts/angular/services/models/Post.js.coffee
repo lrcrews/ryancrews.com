@@ -24,10 +24,7 @@ rcblogAppServicesModule.factory("Post",
 
 
 			showLink: ->
-				if @id?
-					if @slug? then "/posts/#{@id}-#{@slug}" else "/posts/#{@id}"
-				else
-					"/posts/meta"
+				if @slug? then "/posts/#{@id}-#{@slug}" else "/posts/#{@id}"
 
 
 			@posts_from_json_posts: (json_posts_array) ->

@@ -29,10 +29,7 @@ rcblogAppServicesModule.factory("Category", ->
 
 
 		showLink: ->
-			if @id?
-				if @slug? then "/categories/#{@id}-#{@slug}" else "/categories/#{@id}"
-			else
-				"/categories/meta"
+			if @slug? then "/categories/#{@id}-#{@slug}" else "/categories/#{@id}"
 
 
 		@category_from_json_categories: (json_categories_array) ->

@@ -49,17 +49,4 @@ class Category < ActiveRecord::Base
   end
 
 
-	# This is the content for the /categories/meta route,
-	# meant to show the styling of the category page,
-	# allowing for anyone who downloads this to play around
-	# with the css/html/js without needing to create
-	# content first.
-	def self.meta_category
-		category = Category.new
-		category.name = "meta"
-		category.created_at = "20/12/2002".to_date # original air date of Firefly
-		category
-	end
-
-
 end

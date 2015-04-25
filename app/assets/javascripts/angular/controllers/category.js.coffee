@@ -3,10 +3,8 @@
 rcblogAppControllersModule = angular.module("rcblogApp.controllers")
 
 rcblogAppControllersModule.controller("CategoryController",
-	[ "$scope", "$http", "$timeout", "$window", "Category", "Post", ($scope, $http, $timeout, $window, Category, Post) ->
+	[ "$scope", "$timeout", "Category", "Post", ($scope, $timeout, Category, Post) ->
 
-
-		_self = this
 
 		$scope.category = new Category(gon.category)
 		$scope.post = null # the partial showing the intro post content expects a scope variable called post to exist
@@ -17,19 +15,14 @@ rcblogAppControllersModule.controller("CategoryController",
 
 
 		$scope.showPost = (post) ->
-			window.location = post.showLink()
+			$scope.navigateToLink(post.showLink())
 
 
-		# ng-init method
 		$scope.initialize = ->
-			console.log("hello category")
-			
-			# get the JS class versions of the category's posts
-			$scope.category.intro_post = new Post($scope.category.intro_post)
 			$scope.category.posts = Post.posts_from_json_posts($scope.category.posts)
 
-			# set the scope variable used for the display of the intro post
-			if $scope.category.intro_post?.id? || $scope.category.intro_post?.category?.name == "meta"
+			$scope.category.intro_post = new Post($scope.category.intro_post)
+			if $scope.category.intro_post?.id?
 				$scope.post = $scope.category.intro_post
 
 			# get height of section.show-category>header and set that
@@ -46,5 +39,6 @@ rcblogAppControllersModule.controller("CategoryController",
 			# can't return a DOM manipulation in angularJS, so null
 			# is being returned instead
 			null
+			
 
 	])

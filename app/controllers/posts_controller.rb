@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 
-	before_action :set_random_post_link, only: [ :about, :disclosure, :meta, :show ]
+	before_action :set_random_post_link, only: [ :about, :disclosure, :show ]
 
 
 	# About whom?  Perhaps him?  Maybe her?
@@ -37,16 +37,6 @@ class PostsController < ApplicationController
 	# Paged(?) view of all the posts
 	def index
 		gon.posts = Post.all.as_json
-	end
-
-
-	# The post about Post
-	def meta
-		# meta post doesn't have an actual DB category, hence this
-		meta_post = Post.meta_post.as_json
-		meta_post.merge!(category: Category.meta_category.as_json)
-		gon.post = meta_post
-		render :show
 	end
 
 
