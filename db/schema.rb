@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405235028) do
+ActiveRecord::Schema.define(version: 20150427055549) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -19,18 +19,6 @@ ActiveRecord::Schema.define(version: 20150405235028) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  create_table "links", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
-    t.string   "short_description"
-    t.string   "link_type"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.integer  "post_id"
-  end
-
-  add_index "links", ["post_id"], name: "index_links_on_post_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "name"

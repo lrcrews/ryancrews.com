@@ -2,8 +2,8 @@ class Shirt < ActiveRecord::Base
 
 	belongs_to :post
 
-  validates :image_link , presence: true
-  validates :link, presence: true
+	validates :image_link , presence: true
+	validates :link, presence: true
 	validates :name, presence: true
 
 
@@ -11,9 +11,9 @@ class Shirt < ActiveRecord::Base
 		hash = {
 			created_at: self.created_at,
 			id: self.id,
-			image_link: self.slug,
-			link: self.teaser_text,
-			name: self.name.present? ? self.name.titleize : "",
+			image_link: self.image_link,
+			link: self.link,
+			name: self.name,
 			updated_at: self.updated_at
 		}
 
