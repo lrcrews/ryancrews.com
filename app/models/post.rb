@@ -13,9 +13,9 @@ class Post < ActiveRecord::Base
 
 	default_scope { order('created_at desc') }
 
-	scope :most_recent, -> (count) { order('created_at desc').limit(count) unless count.nil? }
 	scope :of_type, -> (type) { where(post_type: type).first unless type.nil? }
-
+	scope :most_recent, -> (count) { order('created_at desc').limit(count) unless count.nil? }
+	
 
 	def as_json(options={})
 		hash = {

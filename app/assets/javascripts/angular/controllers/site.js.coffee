@@ -3,9 +3,10 @@
 rcblogAppControllersModule = angular.module("rcblogApp.controllers")
 
 rcblogAppControllersModule.controller("SiteController",
-	[ "$scope", "$window", "$timeout", "Category", ($scope, $window, $timeout, Category) ->
+	[ "$scope", "$window", "$timeout", "Category", "Post", ($scope, $window, $timeout, Category, Post) ->
 
 		
+		$scope.apps_category = new Category(gon.apps_category)
 		$scope.footer_categories = Category.category_from_json_categories(gon.footer_categories)
 
 		
@@ -18,6 +19,10 @@ rcblogAppControllersModule.controller("SiteController",
 
 		$scope.navigateToAbout = ->
 			$scope.navigateToLink("/about")
+
+
+		$scope.navigateToApps = ->
+			$scope.navigateToLink($scope.apps_category.showLink())
 
 
 		$scope.navigateToDisclosure = ->
@@ -55,7 +60,9 @@ rcblogAppControllersModule.controller("SiteController",
 
 
 		$scope.initialize = ->
-			# that wasn't a fould Joey
+			$scope.apps_category.intro_post = new Post($scope.apps_category.intro_post)
+			$scope.apps_category.posts.pop() #remove the intro post
+			$scope.apps_category.posts = Post.posts_from_json_posts($scope.apps_category.posts)
 
 
 	])

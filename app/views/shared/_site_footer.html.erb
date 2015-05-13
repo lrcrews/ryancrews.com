@@ -36,7 +36,18 @@
 					</ul>
 				</li>
 
-				<%#  %>
+				<%# apps %>
+				<li>
+					<ul>
+						<li ng-click="navigateToApps()">
+							apps
+						</li>
+						<li ng-repeat="post in apps_category.posts"
+								ng-click="navigateToLink(post.showLink())">
+							{{ post.name }}
+						</li>
+					</ul>
+				</li>
 
 			</ul>
 

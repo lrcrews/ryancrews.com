@@ -5,6 +5,10 @@ body.rcblog {
 	// category classes (for category name text)
 	// (also see colors.css.scss)
 
+	.category-apps {
+		color: $category-apps;
+	}
+
 	.category-feature-request {
 		color: $category-feature-request;
 	}
