@@ -15,7 +15,8 @@ stderr_path = '/var/log/unicorn/unicorn.log'
 stdout_path = '/var/log/unicorn/unicorn.log'
 
 # the process id location
-pid '/var/log/unicorn/unicorn.pid'
+pid "#{app_path}/tmp/pids/unicorn.pid"
+#pid '/var/log/unicorn/unicorn.pid'
 
 before_exec do |server|
 	ENV["BUNDLE_GEMFILE"] = "#{app_path}/Gemfile"
