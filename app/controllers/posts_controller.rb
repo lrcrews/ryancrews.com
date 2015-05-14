@@ -30,7 +30,7 @@ class PostsController < ApplicationController
 
 	# It's the home page
 	def home
-		gon.posts = Post.most_recent(6).as_json
+		gon.posts = Post.most_recent(11).as_json
 	end
 
 
