@@ -1,0 +1,15 @@
+@import "mixins";
+
+body.rcblog > section.page-container {
+	
+	section.shirt-preview {
+		border: 1px solid #424242;
+		cursor: pointer;
+		position: relative;
+		width: 300px;
+
+		> img {
+			width: 100%;
+		}
+	}
+}

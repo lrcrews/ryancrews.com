@@ -1,7 +1,6 @@
 class Shirt < ActiveRecord::Base
 
-	belongs_to :post
-
+	
 	validates :image_link , presence: true
 	validates :link, presence: true
 	validates :name, presence: true
@@ -10,6 +9,7 @@ class Shirt < ActiveRecord::Base
 	def as_json(options={})
 		hash = {
 			created_at: self.created_at,
+			description: self.description,
 			id: self.id,
 			image_link: self.image_link,
 			link: self.link,
@@ -17,11 +17,7 @@ class Shirt < ActiveRecord::Base
 			updated_at: self.updated_at
 		}
 
-		include_all = options[:include_all] == "yes"
-
-		if include_all || options[:include_post] == "yes"
-			hash.merge!(post: self.post.as_json)
-		end
+		#include_all = options[:include_all] == "yes"
 
 		hash
 	end

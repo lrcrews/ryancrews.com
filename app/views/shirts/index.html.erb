@@ -10,6 +10,12 @@
 			 it's easy to add something later.
 	%>
 	<header>
+		<section>
+			<header>
+				Shirts!  For me!  But you can buy them too!
+			</header>
+			As I'm learning new things, or (re)reading new (old) books, or just daydreaming about code and tech shit I occasionally have a stroke... of genius!  A shirt idea has been born.  80% of them then proceed to die.  80% of the remaining 20% take far more talent than I have to be born healthy, and they then thusly die.  (then thusly?)  I think that leaves us with 4%.  With that 4% I occassionally find 20% more inspiration, and then I create a shirt on RedBubble, which I then buy.  (But you can buy it too, if you want.  Think of it as getting a really awesome "thank you card" from me for you buying me a beer.  Hooray beer!)
+		</section>
 	</header>
 	
 	<%#  
@@ -24,7 +30,7 @@
 		
 			<ul>
 				<li ng-repeat="shirt in shirts">
-					{{ shirt.name }}
+					<%= render partial: "shirts/partials/shirt_preview" %>
 				</li>
 			</ul>
 

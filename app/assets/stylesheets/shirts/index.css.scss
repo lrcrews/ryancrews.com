@@ -12,10 +12,31 @@ body.rcblog > section.page-container {
 		
 		/* The Fixed (Top) Part */
 		> header {
-			height: $height-of-site-header + 1em;
-  		position: fixed;
+			position: fixed;
   		top: 0;
 			z-index: $z-negative;
+
+			@media (max-width: 64em) { height: 25em; }
+			@media (min-width: 64.001em) and (max-width: 78.124em) { height: 19em; }
+			@media (min-width: 78.125em) { height: 19em; }
+
+			> section {
+				font-size: $large;
+				padding: 4.5em 1em;
+
+				@media (max-width: 64em) { 
+					font-size: $small;
+					line-height: 125%;
+					padding: 5em 1em;
+				}
+
+				> header {
+					@include font-inconsolata;
+					color: #9e2d73;
+					font-size: $big-ass-title;
+					padding-bottom: 0.5em;
+				}
+			}
 		}
 
 		/* The Slidey (Lower) Part */
@@ -24,13 +45,17 @@ body.rcblog > section.page-container {
 			border-left: 0.033em solid $background-dark;
 			border-top: 0.033em solid $background-dark;
 			height: 100%;
-			margin-top: $height-of-site-header + 1em;
 			min-height: 25em;
+			padding-bottom: 2em;
 			position: relative;
 			z-index: $z-low;
 
 			-webkit-transition: margin-top 0.5s ease-out;
 			transition: margin-top 0.5s ease-out;
+
+			@media (max-width: 64em) { margin-top: 25em; }
+			@media (min-width: 64.001em) and (max-width: 78.124em) { margin-top: 19em; min-height: 19em; }
+			@media (min-width: 78.125em) { margin-top: 19em; min-height: 19em; }
 
 			> section {
 				height: 100%;
@@ -45,10 +70,18 @@ body.rcblog > section.page-container {
 				}
 
 				> ul {
+					width: 100%;
 
 					> li {
-						border-bottom: 0.033em solid $background-dark;
-						padding: 1em 0.750em;
+						display: inline-block;
+
+						@media (max-width: 64em) { padding: 10px; }
+						@media (min-width: 64.001em) and (max-width: 78.124em) { padding: 25px 0 0 25px; }
+						@media (min-width: 78.125em) { padding: 10px 0 0 10px; }
+
+						&:first-child {
+							@media (min-width: 64.001em) and (max-width: 78.124em) { padding: 24px 0 0 24px; }
+						}
 					}
 				}
 			}

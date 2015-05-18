@@ -13,5 +13,6 @@ class ShirtsController < ApplicationController
 		redirect_to :index if shirt.nil?
 		gon.shirt = shirt.as_json
 	end
+	
 
 end

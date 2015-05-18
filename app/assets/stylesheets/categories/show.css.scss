@@ -18,12 +18,12 @@ body.rcblog > section.page-container {
   		top: 0;
 			z-index: $z-negative;
 
-			@media (max-width: 64em) { height: 90%; }
-			@media (min-width: 64.001em) and (max-width: 78.124em) { height: 18em; }
-			@media (min-width: 78.125em) { height: 18em; }
+			@media (max-width: 64em) { height: 60%; line-height: 125%; }
+			@media (min-width: 64.001em) and (max-width: 78.124em) { height: 15em; }
+			@media (min-width: 78.125em) { height: 15em; }
 
 			> section {
-				margin-top: $height-of-site-header + 1em;
+				margin-top: $height-of-site-header + 0.333em;
 				position: relative;
 
 				/* created at timestamp */
@@ -33,7 +33,7 @@ body.rcblog > section.page-container {
 
 				/* static text, intro post cell */
 				> section {
-					padding: 0.750em 0;
+					padding: 0.25em;
 				}
 			}
 		}
@@ -50,9 +50,9 @@ body.rcblog > section.page-container {
 			-webkit-transition: margin-top 0.5s ease-out;
 			transition: margin-top 0.5s ease-out;
 
-			@media (max-width: 64em) { margin-top: 90%; }
-			@media (min-width: 64.001em) and (max-width: 78.124em) { margin-top: 21em; min-height: 18em; }
-			@media (min-width: 78.125em) { margin-top: 21em; min-height: 18em; }
+			@media (max-width: 64em) { margin-top: 60%; }
+			@media (min-width: 64.001em) and (max-width: 78.124em) { margin-top: 15em; min-height: 15em; }
+			@media (min-width: 78.125em) { margin-top: 15em; min-height: 15em; }
 
 			> section {
 				height: 100%;

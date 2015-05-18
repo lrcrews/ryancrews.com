@@ -1,0 +1,11 @@
+<%#
+This partial assumes it is included by a parent that has
+a scope variable named 'shirt' that is a
+Shirt.js.coffee instance.
+%>
+<section class="shirt-preview" 
+				 ng-click="navigateToLink(shirt.showLink())">
+
+	<img src="{{ shirt.image_link }}" />
+
+</section>
