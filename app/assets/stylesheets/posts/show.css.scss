@@ -54,6 +54,12 @@ body.rcblog > section.page-container {
 			-webkit-transition: margin-top 0.5s ease-out;
 			transition: margin-top 0.5s ease-out;
 
+			> h1 {
+				color: $font-blue;
+				font-size: $larger;
+				padding-bottom: 0.420em;
+			}
+
 			> section {
 
 				/* main content */
